@@ -1,7 +1,7 @@
 /* 
  * CS:APP Data Lab 
  * 
- * <Please put your name and userid here>
+ * Michael Hardt mhardt
  * 
  * bits.c - Source file with your solutions to the Lab.
  *          This is the file you will hand in to your instructor.
@@ -41,7 +41,31 @@ INTEGER CODING RULES:
       return ExprR;
   }
 
-  Each "Expr" is an expression using ONLY the following:
+ating: 2
+ */
+ int copyLSB(int x) {
+	 return 2;
+ }
+/* 
+ *  * rotateRight - Rotate x to the right by n
+ *   *   Can assume that 0 <= n <= 31
+ *    *   Examples: rotateRight(0x87654321,4) = 0x18765432
+ *     *   Legal ops: ~ & ^ | + << >> !
+ *      *   Max ops: 25
+ *       *   Rating: 3 
+ *        */
+int rotateRight(int x, int n) {
+	return 2;
+}
+/* 
+ *  * isNonNegative - return 1 if x >= 0, return 0 otherwise 
+ *   *   Example: isNonNegative(-1) = 0.  isNonNegative(0) = 1.
+ *    *   Legal ops: ! ~ & ^ | + << >>
+ *     *   Max ops: 6
+ *      *   Rating: 3
+ *       */
+int isNonNegative(int x) {
+	return 2;
   1. Integer constants 0 through 255 (0xFF), inclusive. You are
       not allowed to use big constants such as 0xffffffff.
   2. Function arguments and local variables (no global variables).
@@ -100,7 +124,41 @@ You are expressly forbidden to:
   2. Define any additional functions in this file.
   3. Call any functions.
   4. Use any form of casting.
-  5. Use any data type other than int or unsigned.  This means that you
+  . Use any data type other than int or unsigned.  This means that youMPLES OF ACCEPTABLE CODING STYLE:
+    /*
+     *    * pow2plus1 - returns 2^x + 1, where 0 <= x <= 31
+     *       */
+    int pow2plus1(int x) {
+	         /* exploit ability of shifts to compute powers of 2 */
+	         return (1 << x) + 1;
+		   }
+
+  /*
+   *    * pow2plus4 - returns 2^x + 4, where 0 <= x <= 31
+   *       */
+  int pow2plus4(int x) {
+	       /* exploit ability of shifts to compute powers of 2 */
+	       int result = (1 << x);
+	            result += 4;
+		         return result;
+			   }
+
+FLOATING POINT CODING RULES
+
+For the problems that require you to implent floating-point operations,
+    the coding rules are less strict.  You are allowed to use looping and
+    conditional control.  You are allowed to use both ints and unsigneds.
+    You can use arbitrary integer and unsigned constants.
+
+    You are expressly forbidden to:
+      1. Define or use any macros.
+        2. Define any additional functions in this file.
+	  3. Call any functions.
+	    4. Use any form of casting.
+	      5. Use any data type other than int or unsigned.  This means that you
+	           cannot use arrays, structs, or unions.
+		     6. Use any floating point data types, operations, or constants.
+
      cannot use arrays, structs, or unions.
   6. Use any floating point data types, operations, or constants.
 
@@ -136,6 +194,43 @@ NOTES:
 
    The GNU C Library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Lesser General Public
+   TES:
+     1. Use the dlc (data lab checker) compiler (described in the handout) to 
+          check the legality of your solutions.
+	    2. Each function has a maximum number of operators (! ~ & ^ | + << >>)
+	         that you are allowed to use for your implementation of the function. 
+		      The max operator count is checked by dlc. Note that '=' is not 
+		           counted; you may use as many of these as you want without penalty.
+			     3. Use the btest test harness to check your functions for correctness.
+			       4. Use the BDD checker to formally verify your functions
+			         5. The maximum number of ops for each function is given in the
+				      header comment for each function. If there are any inconsistencies 
+				           between the maximum ops in the writeup and in this file, consider
+					        this file the authoritative source.
+
+						/*
+						 *  * STEP 2: Modify the following functions according the coding rules.
+						 *   * 
+						 *    *   IMPORTANT. TO AVOID GRADING SURPRISES:
+						 *     *   1. Use the dlc compiler to check that your solutions conform
+						 *      *      to the coding rules.
+						 *       *   2. Use the BDD checker to formally verify that your solutions produce 
+						 *        *      the correct answers.
+						 *         */
+
+
+#endif
+     /* Copyright (C) 1991-2022 Free Software Foundation, Inc.
+      *    This file is part of the GNU C Library.
+      *
+      *       The GNU C Library is free software; you can redistribute it and/or
+      *          modify it under the terms of the GNU Lesser General Public
+      *             License as published by the Free Software Foundation; either
+      *                version 2.1 of the License, or (at your option) any later version.
+      *
+      *                   The GNU C Library is distributed in the hope that it will be useful,
+      *                      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      *                         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
    License as published by the Free Software Foundation; either
    version 2.1 of the License, or (at your option) any later version.
 
@@ -174,7 +269,7 @@ NOTES:
  *   Rating: 1
  */
 int bitNor(int x, int y) {
-  return 2;
+  return ~x & ~y;
 }
 /* 
  * bitXor - x^y using only ~ and & 
