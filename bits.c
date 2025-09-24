@@ -298,7 +298,7 @@ int tmax(void) {
  *   Rating: 2
  */
 int isNotEqual(int x, int y) {
-  return 2;
+  return !!(x ^y);
 }
 /* 
  * copyLSB - set all bits of result to least significant bit of x
