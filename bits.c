@@ -319,10 +319,11 @@ int copyLSB(int x) {
  *   Rating: 3 
  */
 int rotateRight(int x, int n) {
-  int left_shift = (32 + ~n +1);
-  int right = (x >> n) & ((~0) >> (32 + ~n +1));
-  int left = x << left_shift;
-  return right | left;
+  int shift = 32 + ~n + 1;
+  int mask = ~(~0 << shift);
+  int rightPart = (x >> n) & mask;
+  int leftPart = x << shift;
+  return rightPart | leftPart;
 }
 /* 
  * isNonNegative - return 1 if x >= 0, return 0 otherwise 
