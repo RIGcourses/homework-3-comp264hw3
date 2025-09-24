@@ -308,7 +308,7 @@ int isNotEqual(int x, int y) {
  *   Rating: 2
  */
 int copyLSB(int x) {
-  return 2;
+  return (x<<31) >> 31;
 }
 /* 
  * rotateRight - Rotate x to the right by n
